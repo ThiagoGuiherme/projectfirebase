@@ -23,6 +23,8 @@ if (!global.atob) {
 // criando um objeto para a pilha de navegação
 const Stack = createStackNavigator()
 
+
+
 // criando a aplicação
 export default function App() {
   const [loading, setLoading] = useState(true)
@@ -36,6 +38,18 @@ export default function App() {
    * a Home (a menos que limpe os dados do app)
    */
 
+  
+  const App = () => {
+    return (
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName="RegistroDocumento">
+          <Stack.Screen name="RegistroDocumento" component={RegistroDocumentoScreen} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    );
+  };
+  
+  
   useEffect(() => {
     const usersRef = firebase.firestore().collection('users')
     firebase.auth().onAuthStateChanged(user => {
@@ -94,7 +108,14 @@ export default function App() {
             <Stack.Screen name="Registration" component={RegistrationScreen} />
           </>
         )}
+        
       </Stack.Navigator>
     </NavigationContainer>
   )
+  
 }
+
+
+
+
+

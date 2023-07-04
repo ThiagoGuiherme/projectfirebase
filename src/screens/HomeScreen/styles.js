@@ -53,6 +53,16 @@ export default StyleSheet.create({
     fontSize: 20,
     color: '#333333'
   },
+  footerView: {
+    display: 'flex',
+    alignItems: 'center',
+    marginTop: 40,
+    marginRight: 140
+  },
+  footerText: {
+    fontSize: 16,
+    color: '#2e2e2d'
+  },
   footerLink: {
     color: '#788eec',
     fontWeight: 'bold',

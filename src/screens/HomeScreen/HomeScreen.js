@@ -18,7 +18,10 @@ export default function HomeScreen({ navigation, ...props }) {
 
   const entityRef = firebase.firestore().collection('entities')
   const userId = props.extraData.id
-
+  
+  const onFooterLinkPress = () => {
+    navigation.navigate('Login')
+  }
   useEffect(() => {
     /**
      * buscando na coleção 'entities' os
@@ -151,8 +154,14 @@ export default function HomeScreen({ navigation, ...props }) {
           autoCapitalize="none"
         />
         <TouchableOpacity style={styles.button} onPress={onAddButtonPress}>
-          <Text style={styles.buttonText}>Add</Text>
+          <Text style={styles.buttonText}>Adicionar</Text>
         </TouchableOpacity>
+      
+          
+          <Text style={styles.footerLink} onPress={() => onFooterLinkPress()}>
+            Login
+          </Text>
+     
       </View>
 
       <View style={styles.listContainer}>
@@ -163,6 +172,8 @@ export default function HomeScreen({ navigation, ...props }) {
           removeClippedSubviews={true}
         />
       </View>
+     
     </View>
+    
   )
 }
